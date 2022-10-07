@@ -30,3 +30,9 @@
 - 所用语言：HTML5、CSS、JavaScript
 - 涉及知识点：transition、transform、ul、li 、audio...
 
+## 6. 王者荣耀官网英雄查询
+
+- 文件夹名称：王者荣耀官网英雄查询
+- 所用语言：JavaScript
+- 涉及知识点：jquery、fetch API、模板字符串、函数防抖...
+
