@@ -24,5 +24,9 @@
 - 所用语言：HTML、CSS、JavaScript
 - 涉及知识点：逻辑训练、transition、transform ...
 
+## 5. 歌词滚动效果
 
+- 文件夹名称：歌词滚动
+- 所用语言：HTML5、CSS、JavaScript
+- 涉及知识点：transition、transform、ul、li 、audio...
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>歌词滚动</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        width: 100%;
+        background-color: #000;
+        display: grid;
+      }
+      audio{
+        width: 500px;
+        margin: 10px auto;
+      }
+      .lyr-container{
+        width: 100%;
+        height: 420px;
+        display: grid;
+        margin-top: 50px;
+        transition: .5s;
+        overflow: hidden;
+
+      }
+      .lyr-container li{
+        list-style: none;
+        color: #666;
+        height: 30px;
+        line-height: 30px;
+        margin: 0 auto;
+        transition: .2s;
+        /* transform: translateY(-150px); */
+      }
+      .lyr-container li.active{
+        color: #fff;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <audio src="./music.mp3" controls></audio>
+    <ul class="lyr-container">
+    </ul>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
