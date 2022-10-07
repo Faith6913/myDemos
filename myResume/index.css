@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: "Microsoft YaHei"; */
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+    min-width: 1050px;
+    background: url(./images/bg.gif) repeat;
+}
+.mid{
+    padding: 0 40px;
+}
+.container{
+    width: 800px;
+    /* height: 200vh; */
+    margin: 50px auto;
+    background-color: #FFF;
+    box-shadow: 0 0 5px 3px rgba(255,255,255, 0.8);
+    border-radius: 20px;
+    position: relative;
+    padding-bottom: 40px;
+    /* overflow: hidden; */
+}
+.container::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, lightblue, #517df2);
+    box-shadow: 0 0 5px 3px rgba(246, 166, 166, 0.8);
+    border-radius: 20px;
+    transform: rotate(-5deg);
+    
+}
+
+.profile{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(248, 248, 248);
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    justify-content: space-between  ;
+    align-items: center;
+}
+.profile img{
+    width: 130px;
+    height: 167px;
+    border-radius: 50%;
+    background-color: #fff;
+    object-fit: contain;
+}
+.profile .pro-dec{
+    display: grid;
+    grid-template-columns: 320px 115px 100px;
+    
+}
+.profile .pro-dec .name-pro{
+    display: flex;
+    align-items: flex-end;
+    grid-area: 1/1/2/4;
+    margin-bottom: 10px;
+    font-family: 'Ma Shan Zheng', cursive;
+}
+.profile .pro-dec .name-pro h1{
+    margin-right: 50px;
+}
+.profile .pro-dec i{
+    margin-right: 10px;
+    color: rgb(99, 93, 93); 
+}
+.profile .pro-dec a,
+.time-line-item .content a{
+    color: #3b9aed;
+}
+.profile .pro-dec .birth,
+.profile .pro-dec .edu,
+.profile .pro-dec .experience{
+    color: rgb(85, 79, 79);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 20px; 
+}
+
+
+.time-line i{
+    font-size: 25px;
+}
+
+.time-line{
+    padding-top: 20px;
+    position: relative;
+}
+.time-line h1{
+    padding: 0 0 20px 0;
+    border-bottom: 2px solid #eee;
+    font-size: 25px;
+    font-family: 'Ma Shan Zheng', cursive;
+}
+.time-line h1::before{
+    content: "";
+    position: absolute;
+    left: 37px;
+    top: 18px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(162 204 239 / 50%);
+}
+.time-line .time-line-items{
+    margin: 20px;
+    border-left: 2px solid lightblue;
+}
+.time-line .time-line-item{ 
+    display: grid;
+    grid-template-columns: 110px 165px 300px;
+    padding: 20px 30px;
+    position: relative;
+}
+.time-line .time-line-item .reference::before{    
+    content: "";
+    width: 13px;
+    height: 13px;
+    background-color: rgb(59, 154, 237);
+    transform: rotate(45deg);
+    position: absolute;
+    left: -7.5px;
+    top: 22px;
+}
+.time-line .time-line-item .year,
+.time-line .time-line-item .profession,
+.time-line .time-line-item .contest-grade{    
+    color: #888888;
+}
+.time-line .time-line-item .school{    
+    color: #333;
+}
+
+
+#honor.time-line .time-line-items .time-line-item{
+    display: grid;
+    grid-template-columns: 110px 300px 300px;
+}
+#skill.time-line .time-line-items .time-line-item{
+    display: grid;
+    grid-template-columns: 110px 460px 100px;
+    align-items: center;
+}
+#skill.time-line .time-line-items .time-line-item .reference::before{
+    transform: rotate(45deg) translate(15px, 15px);
+}
+#skill.time-line .time-line-items .time-line-item p{
+    font-size: 14px;
+    color: #888;
+    padding-right: 55px;
+    text-indent: 2em;
+}
+.proficiency{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.proFic-item{
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 1px solid rgb(59, 154, 237);
+    background-color: rgb(59, 154, 237);
+}
+#grade4 .proFic-item:nth-child(n + 5){
+    background-color: transparent;
+}
+#grade3 .proFic-item:nth-child(n + 4){
+    background-color: transparent;
+}
+#grade2 .proFic-item:nth-child(n + 3){
+    background-color: transparent;
+}
+
+#projectsExp .time-line-items .time-line-item{
+    display: flex;
+    flex-direction: column;
+}
+.time-line-item .content{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 90px 600px;
+    grid-template-rows: 40px 40px 40px auto;
+    align-items: center;
+}
+.time-line-item .content div.index{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 25px;
+    color: #888;
+}
+.time-line-item .content p{
+    font-weight: 200;
+    color: #000;
+}
+.time-line-item .content .make p{
+    margin: 1em 0;
+    padding-right: 30px;
+    text-indent: 2em;
+}
+#evaluate p{
+    margin-top: 30px;
+    line-height: 2;
+}
