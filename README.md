@@ -20,7 +20,7 @@
 
 ## 4. 美团省市级联
 
-- 文件夹名称：chatrobot
+- 文件夹名称：美团省市级联
 - 所用语言：HTML、CSS、JavaScript
 - 涉及知识点：逻辑训练、transition、transform ...
 

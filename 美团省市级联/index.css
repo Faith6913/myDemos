@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul li {
+    list-style: none;
+}
+
+.select {
+    display: inline-block;
+    margin: 8px 0 0 12px;
+    position: relative;
+    white-space: nowrap;
+    /* 强制不要换行 */
+}
+
+.select .title {
+    min-width: 150px;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    line-height: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.select .title span {
+    font-size: 14px;
+    color: rgb(102, 102, 102);
+}
+
+.select .title i {
+    font-size: 14px;
+    color: rgb(102, 102, 102);
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.select .title.none-selected {
+    cursor: not-allowed;
+}
+
+.select .title.none-selected>* {
+    font-size: 14px;
+    color: rgb(204, 204, 204);
+}
+
+.select ul.options {
+    min-width: 100%;
+    max-height: 280px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0px #0005;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 20px);
+    row-gap: 6px;
+    column-gap: 30px;
+    grid-auto-flow: column;
+    justify-items: start;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    padding: 10px;
+}
+
+.select ul li {
+    padding: 3px 6px;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+    line-height: 20px;
+}
+
+.select ul li.active {
+    border-radius: 5px;
+    background-color: rgb(238, 192, 90);
+}
+.select ul.options::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-width: 1px 0 0 1px;
+    position: absolute;
+    left: 68px;
+    top: -7px;
+    transform: rotate(45deg);
+}
+.select .options{
+    transform: scaleY(1);
+    transform-origin: top center;
+    transition: .3s;
+}
+.select .options.close{
+    transform: scaleY(0);
+}
