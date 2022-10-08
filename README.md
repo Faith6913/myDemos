@@ -139,3 +139,21 @@ https://faith6913.github.io/myDemos/%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD%E5%9B%B
 #### 涉及知识点
 
 - setTimeout、setInterval ...
+
+## 9. 腾讯视频重磅推荐模块
+
+#### Live Demo
+
+https://faith6913.github.io/myDemos/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91%E9%87%8D%E7%A3%85%E6%8E%A8%E8%8D%90%E6%A8%A1%E5%9D%97/
+
+#### 文件夹名称
+
+- 腾讯视频重磅推荐模块
+
+#### 所用语言
+
+- HTML、CSS、JavaScript
+
+#### 涉及知识点
+
+- setTimeout、setInterval ...
