@@ -171,3 +171,17 @@ https://faith6913.github.io/myDemos/10.%E5%AD%A6%E6%A0%A1%E9%80%89%E6%8B%A9%E4%B
 #### 所用语言
 
 - HTML、CSS、JavaScript
+
+## 11.图片放大镜
+
+#### Live Demo
+
+https://faith6913.github.io/myDemos/11.%E5%9B%BE%E7%89%87%E6%94%BE%E5%A4%A7%E9%95%9C/
+
+#### 文件夹名称
+
+- 11.图片放大镜
+
+#### 所用语言
+
+- HTML、CSS、JavaScript
