@@ -122,3 +122,20 @@ https://faith6913.github.io/myDemos/%E8%AF%BB%E5%BF%83%E6%9C%AF%E5%B0%8F%E6%B8%B
 
 - JavaScript
 
+## 8. 无缝轮播图
+
+#### Live Demo
+
+https://faith6913.github.io/myDemos/%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD%E5%9B%BE/
+
+#### 文件夹名称
+
+- 无缝轮播图
+
+#### 所用语言
+
+- HTML、CSS、JavaScript
+
+#### 涉及知识点
+
+- setTimeout、setInterval ...
