@@ -4,11 +4,11 @@
 
 #### Live Demo
 
-https://faith6913.github.io/myDemos/chatrobot/login.html
+https://faith6913.github.io/myDemos/01.chatrobot/login.html
 
 #### 文件夹名称
 
-- chatrobot
+- 01.chatrobot
 
 #### 技术点
 
@@ -22,11 +22,11 @@ https://faith6913.github.io/myDemos/chatrobot/login.html
 
 #### Live Demo
 
-https://faith6913.github.io/myDemos/myResume/
+https://faith6913.github.io/myDemos/02.myResume/
 
 #### 文件夹名称
 
-- myResume
+- 02.myResume
 
 #### 所用语言
 
@@ -40,11 +40,11 @@ https://faith6913.github.io/myDemos/myResume/
 
 #### Live Demo
 
-https://faith6913.github.io/myDemos/ImitatingXiaomi/
+https://faith6913.github.io/myDemos/03.ImitatingXiaomi/
 
 #### 文件夹名称
 
-- ImitatingXiaomi
+- 03.ImitatingXiaomi
 
 #### 所用语言
 
@@ -58,11 +58,11 @@ https://faith6913.github.io/myDemos/ImitatingXiaomi/
 
 #### Live Demo
 
-https://faith6913.github.io/myDemos/%E7%BE%8E%E5%9B%A2%E7%9C%81%E5%B8%82%E7%BA%A7%E8%81%94/
+https://faith6913.github.io/myDemos/04.%E7%BE%8E%E5%9B%A2%E7%9C%81%E5%B8%82%E7%BA%A7%E8%81%94/
 
 #### 文件夹名称
 
-- 美团省市级联
+- 04.美团省市级联
 
 #### 所用语言
 
@@ -76,11 +76,11 @@ https://faith6913.github.io/myDemos/%E7%BE%8E%E5%9B%A2%E7%9C%81%E5%B8%82%E7%BA%A
 
 #### Live Demo
 
-https://faith6913.github.io/myDemos/%E6%AD%8C%E8%AF%8D%E6%BB%9A%E5%8A%A8/
+https://faith6913.github.io/myDemos/05.%E6%AD%8C%E8%AF%8D%E6%BB%9A%E5%8A%A8/
 
 #### 文件夹名称
 
-- 歌词滚动
+- 05.歌词滚动
 
 #### 所用语言
 
@@ -94,11 +94,11 @@ https://faith6913.github.io/myDemos/%E6%AD%8C%E8%AF%8D%E6%BB%9A%E5%8A%A8/
 
 #### Live Demo
 
-https://faith6913.github.io/myDemos/%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80%E5%AE%98%E7%BD%91%E8%8B%B1%E9%9B%84%E6%9F%A5%E8%AF%A2/
+https://faith6913.github.io/myDemos/06.%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80%E5%AE%98%E7%BD%91%E8%8B%B1%E9%9B%84%E6%9F%A5%E8%AF%A2/
 
 #### 文件夹名称
 
-- 王者荣耀官网英雄查询
+- 06.王者荣耀官网英雄查询
 
 #### 所用语言
 
@@ -112,11 +112,11 @@ https://faith6913.github.io/myDemos/%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80%E5%AE%9
 
 #### Live Demo
 
-https://faith6913.github.io/myDemos/%E8%AF%BB%E5%BF%83%E6%9C%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/
+https://faith6913.github.io/myDemos/07.%E8%AF%BB%E5%BF%83%E6%9C%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/
 
 #### 文件夹名称
 
-- 读心术小游戏
+- 07.读心术小游戏
 
 #### 所用语言
 
@@ -126,11 +126,11 @@ https://faith6913.github.io/myDemos/%E8%AF%BB%E5%BF%83%E6%9C%AF%E5%B0%8F%E6%B8%B
 
 #### Live Demo
 
-https://faith6913.github.io/myDemos/%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD%E5%9B%BE/
+https://faith6913.github.io/myDemos/08.%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD%E5%9B%BE/
 
 #### 文件夹名称
 
-- 无缝轮播图
+- 08.无缝轮播图
 
 #### 所用语言
 
@@ -144,11 +144,11 @@ https://faith6913.github.io/myDemos/%E6%97%A0%E7%BC%9D%E8%BD%AE%E6%92%AD%E5%9B%B
 
 #### Live Demo
 
-https://faith6913.github.io/myDemos/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91%E9%87%8D%E7%A3%85%E6%8E%A8%E8%8D%90%E6%A8%A1%E5%9D%97/
+https://faith6913.github.io/myDemos/09.%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91%E9%87%8D%E7%A3%85%E6%8E%A8%E8%8D%90%E6%A8%A1%E5%9D%97/
 
 #### 文件夹名称
 
-- 腾讯视频重磅推荐模块
+- 09.腾讯视频重磅推荐模块
 
 #### 所用语言
 
@@ -157,3 +157,17 @@ https://faith6913.github.io/myDemos/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91%E9%87%8
 #### 涉及知识点
 
 - setTimeout、setInterval ...
+
+## 10. 学校选择三级联动
+
+#### Live Demo
+
+https://faith6913.github.io/myDemos/10.%E5%AD%A6%E6%A0%A1%E9%80%89%E6%8B%A9%E4%B8%89%E7%BA%A7%E8%81%94%E5%8A%A8/
+
+#### 文件夹名称
+
+- 10.学校选择三级联动
+
+#### 所用语言
+
+- HTML、CSS、JavaScript
