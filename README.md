@@ -108,3 +108,17 @@ https://faith6913.github.io/myDemos/%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80%E5%AE%9
 
 - jquery、fetch API、模板字符串、函数防抖...
 
+## 7. 读心术小游戏
+
+#### Live Demo
+
+https://faith6913.github.io/myDemos/%E8%AF%BB%E5%BF%83%E6%9C%AF%E5%B0%8F%E6%B8%B8%E6%88%8F/
+
+#### 文件夹名称
+
+- 读心术小游戏
+
+#### 所用语言
+
+- JavaScript
+

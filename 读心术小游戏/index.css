@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 1000px;
+    height: 700px;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    position: relative;
+}
+.board{
+    width: 350px;
+    height: 100%;
+}
+.board .panel{
+    position: absolute;
+    left: 25px;
+    top: 0;
+    
+}
+.board .panel .bg{
+    transition: all 3s ease-in-out;
+    /* transform: rotate(-720deg); */
+}
+
+.board .round{
+    position: absolute;
+    left: 72px;
+    top: 72px;
+    transition: all 3s ease-in-out;
+    /* transform: rotate(720deg); */
+    /* display: none; */
+}
+.board .panel .result{
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    display: none;
+}
+
+.board .desc{
+    position: absolute;
+    left: -15px;
+    top: 325px;
+}
+.dictionary{
+    width: 650px;
+    height: 100%;
+}
+p{
+    margin: 20px;
+    text-align: center;
+    font-weight: normal;
+    width: 350px;
+    color: rgb(107, 105, 105);
+}
+.dictionary{
+    display: grid;
+    grid-template-columns: 55px 55px 55px 55px 55px;
+    justify-content: space-around;
+}
+.dictionary span{
+    display: inline-block;
+    width: 20px;
+    margin-right: 5px;
+    color: rgb(107, 105, 105);
+    text-align: center;
+}
+.dictionary img{
+    height: 30px;
+
+}
