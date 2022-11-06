@@ -1,0 +1,814 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+/* meyer reset -- http://meyerweb.com/eric/tools/css/reset/ , v2.0 | 20110126 | License: none (public domain) */
+
+@include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+/* pt-serif-regular - latin */
+/* pt-serif-italic - latin */
+/* pt-serif-700 - latin */
+/* pt-serif-700italic - latin */
+:root {
+	--active-file-bg-color: #dadada;
+	--active-file-bg-color: rgba(32, 43, 51, 0.63);
+	--active-file-text-color: white;
+	--bg-color: #f3f2ee;
+	--text-color: #1f0909;
+	--control-text-color: #444;
+	--rawblock-edit-panel-bd: #e5e5e5;
+
+	--select-text-bg-color: rgba(32, 43, 51, 0.63);
+  --select-text-font-color: white;
+}
+
+pre {
+	--select-text-bg-color: #36284e;
+	--select-text-font-color: #fff;
+}
+
+html {
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+}
+
+html, body {
+	background-color: #f3f2ee;
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+	color: #1f0909;
+	line-height: 1.5em;
+}
+
+/*#write {
+	overflow-x: auto;
+    max-width: initial;
+	padding-left: calc(50% - 17em);
+    padding-right: calc(50% - 17em);
+}
+
+@media (max-width: 36em) {
+ 	#write {
+ 		padding-left: 1em;
+    	padding-right: 1em;
+ 	}
+}*/
+
+#write {
+	max-width: 40em;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+			max-width: 914px;
+	}
+}
+
+ol li {
+	list-style-type: decimal;
+	list-style-position: outside;
+}
+ul li {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* styles */
+
+/* ====== */
+
+/* headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+}
+h1 {
+	font-size: 1.875em;
+	/*30 / 16*/
+	line-height: 1.6em;
+	/* 48 / 30*/
+	margin-top: 2em;
+}
+h2,
+h3 {
+	font-size: 1.3125em;
+	/*21 / 16*/
+	line-height: 1.15;
+	/*24 / 21*/
+	margin-top: 2.285714em;
+	/*48 / 21*/
+	margin-bottom: 1.15em;
+	/*24 / 21*/
+}
+h3 {
+	font-weight: normal;
+}
+h4 {
+	font-size: 1.125em;
+	/*18 / 16*/
+	margin-top: 2.67em;
+	/*48 / 18*/
+}
+h5,
+h6 {
+	font-size: 1em;
+	/*16*/
+}
+h1 {
+	border-bottom: 1px solid;
+	margin-bottom: 1.875em;
+	padding-bottom: 0.8125em;
+}
+/* links */
+
+a {
+	text-decoration: none;
+	color: #065588;
+}
+a:hover,
+a:active {
+	text-decoration: underline;
+}
+/* block spacing */
+
+p,
+blockquote,
+.md-fences {
+	margin-bottom: 1.5em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 1.5em;
+}
+/* blockquote */
+
+blockquote {
+	font-style: italic;
+	border-left: 5px solid;
+	margin-left: 2em;
+	padding-left: 1em;
+}
+/* lists */
+
+ul,
+ol {
+	margin: 0 0 1.5em 1.5em;
+}
+/* tables */
+.md-meta,.md-before, .md-after {
+	color:#999;
+}
+
+table {
+	margin-bottom: 1.5em;
+	/*24 / 16*/
+	font-size: 1em;
+	/* width: 100%; */
+}
+thead th,
+tfoot th {
+	padding: .25em .25em .25em .4em;
+	text-transform: uppercase;
+}
+th {
+	text-align: left;
+}
+td {
+	vertical-align: top;
+	padding: .25em .25em .25em .4em;
+}
+
+code,
+.md-fences {
+	background-color: #dadada;
+}
+
+code {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.md-fences {
+	margin-left: 2em;
+	margin-bottom: 3em;
+	padding-left: 1ch;
+	padding-right: 1ch;
+}
+
+pre,
+code,
+tt {
+	font-size: .875em;
+	line-height: 1.714285em;
+}
+/* some fixes */
+
+h1 {
+	line-height: 1.3em;
+	font-weight: normal;
+	margin-bottom: 0.5em;
+}
+
+p + ul,
+p + ol{
+	margin-top: .5em;
+}
+
+h3 + ul,
+h4 + ul,
+h5 + ul,
+h6 + ul,
+h3 + ol,
+h4 + ol,
+h5 + ol,
+h6 + ol {
+	margin-top: .5em;
+}
+
+li > ul,
+li > ol {
+	margin-top: inherit;
+	margin-bottom: 0;
+}
+
+li ol>li {
+	list-style-type: lower-alpha;
+}
+
+li li ol>li{
+	list-style-type: lower-roman;
+}
+
+h2,
+h3 {
+	margin-bottom: .75em;
+}
+hr {
+	border-top: none;
+	border-right: none;
+	border-bottom: 1px solid;
+	border-left: none;
+}
+h1 {
+	border-color: #c5c5c5;
+}
+blockquote {
+	border-color: #bababa;
+	color: #656565;
+}
+
+blockquote ul,
+blockquote ol {
+	margin-left:0;
+}
+
+.ty-table-edit {
+	background-color: transparent;
+}
+thead {
+	background-color: #dadada;
+}
+tr:nth-child(even) {
+	background: #e8e7e7;
+}
+hr {
+	border-color: #c5c5c5;
+}
+.task-list{
+	padding-left: 1rem;
+}
+
+.md-task-list-item {
+	padding-left: 1.5rem;
+	list-style-type: none;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.25rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #F3F2EE;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+
+#write pre.md-meta-block {
+	min-height: 1.875rem;
+	color: #555;
+	border: 0px;
+	background: transparent;
+	margin-top: -4px;
+	margin-left: 1em;
+	margin-top: 1em;
+}
+
+.md-image>.md-meta {
+	color: #9B5146;
+}
+
+.md-image>.md-meta{
+	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', serif;
+}
+
+
+#write>h3.md-focus:before{
+	left: -1.5rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h4.md-focus:before{
+	left: -1.5rem;
+	top: .25rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h5.md-focus:before{
+	left: -1.5rem;
+	top: .0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h6.md-focus:before{
+	left: -1.5rem;
+	top: 0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+.md-toc-content:empty:before{
+	color: #065588;
+}
+.md-toc-item {
+	color: #065588;
+}
+#write div.md-toc-tooltip {
+	background-color: #f3f2ee;
+}
+
+#typora-sidebar {
+	background-color: #f3f2ee;
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+  	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+}
+
+.pin-outline #typora-sidebar {
+	background: inherit;
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+.pin-outline #typora-sidebar:hover .outline-title-wrapper {
+	border-left:1px dashed;
+}
+
+.outline-item:hover {
+  background-color: #dadada;
+  border-left: 28px solid #dadada;
+  border-right: 18px solid #dadada;
+}
+
+.typora-node .outline-item:hover {
+  	border-right: 28px solid #dadada;
+}
+
+.outline-expander:before {
+  content: "\f0da";
+  font-family: FontAwesome;
+  font-size:14px;
+  top: 1px;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  content: "\f0d7";
+}
+
+.modal-content {
+	background-color: #f3f2ee;
+}
+
+.auto-suggest-container ul li {
+	list-style-type: none;
+}
+
+/** UI for electron */
+
+.megamenu-menu,
+#top-titlebar, #top-titlebar *,
+.megamenu-content {
+	background: #f3f2ee;
+	color: #1f0909;
+}
+
+.megamenu-menu-header {
+	border-bottom: 1px dashed #202B33;
+}
+
+.megamenu-menu {
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+header, .context-menu, .megamenu-content, footer {
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+    color: #1f0909;
+}
+
+#megamenu-back-btn {
+	color: #1f0909;
+	border-color: #1f0909;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title:before {
+	color: #1f0909;
+}
+
+.megamenu-menu-list li a:hover, .megamenu-menu-list li a.active {
+	color: inherit;
+	background-color: #e8e7df;
+}
+
+.long-btn:hover {
+	background-color: #e8e7df;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+	background-color: #D2D1D1;
+}
+
+.btn-default {
+	background-color: transparent;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+.ty-show-word-count #footer-word-count {
+	background: #c7c5c5;
+}
+
+#typora-quick-open {
+    background-color: inherit;
+}
+
+.md-diagram-panel {
+	margin-top: 8px;
+}
+
+.file-list-item-file-name {
+	font-weight: initial;
+}
+
+.file-list-item-summary {
+	opacity: 1;
+}
+
+.file-list-item {
+	color: #777;
+}
+
+.file-list-item.active {
+	background-color: inherit;
+	color: black;
+}
+
+.ty-side-sort-btn.active {
+	background-color: inherit;
+}
+
+.file-list-item.active .file-list-item-file-name  {
+	font-weight: bold;
+}
+
+.file-list-item{
+    opacity:1 !important;
+}
+
+.file-library-node.active>.file-node-background{
+	background-color: rgba(32, 43, 51, 0.63);
+	background-color: var(--active-file-bg-color);
+}
+
+.file-tree-node.active>.file-node-content{
+	color: white;
+	color: var(--active-file-text-color);
+}
+
+.md-task-list-item>input {
+	margin-left: -1.7em;
+	margin-top: calc(1rem - 12px);
+	-webkit-appearance: button;
+}
+
+input {
+	border: 1px solid #aaa;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header:hover, 
+.megamenu-menu-header:focus {
+	color: inherit;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+	opacity: 1;
+}
+
+/* https://github.com/typora/typora-issues/issues/2046 */
+.os-windows-7 strong,
+.os-windows-7 strong  {
+	font-weight: 760;
+}
+
+.ty-preferences .btn-default {
+	background: transparent;
+}
+
+.ty-preferences .window-header {
+	border-bottom: 1px dashed #202B33;
+	box-shadow: none;
+}
+
+#sidebar-loading-template, #sidebar-loading-template.file-list-item {
+	color: #777;
+}
+
+.searchpanel-search-option-btn.active {
+	background: #777;
+	color: white;
+}
+
+.export-detail, .light .export-detail, 
+.light .export-item.active, 
+.light .export-items-list-control {
+	background: #e0e0e0;
+	border-radius: 2px;
+	font-weight: 700;
+	color: inherit
+}
+
+
+</style><title>08.大作文</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='大作文四大必考话题'><span>【大作文四大必考话题】</span></h1><h2 id='一教育文化3'><span>一、教育文化(3)</span></h2><h3 id='一）传统文化'><span>（一）传统文化</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>年份及卷子</span></th><th style='text-align:center;' ><span>英文题目</span></th><th style='text-align:center;' ><span>中文题目</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>2002</span></td><td style='text-align:center;' ><span>culture exchange</span></td><td style='text-align:center;' ><span>文化交流</span></td></tr><tr><td style='text-align:center;' ><span>2010-1</span></td><td style='text-align:center;' ><span>culture blending</span></td><td style='text-align:center;' ><span>文化融合</span></td></tr><tr><td style='text-align:center;' ><span>2017-2</span></td><td style='text-align:center;' ><span>traditional Chinese culture</span></td><td style='text-align:center;' ><span>传统中国文化</span></td></tr><tr><td style='text-align:center;' ><span>2021-1</span></td><td style='text-align:center;' ><span>traditional Chinese culture</span></td><td style='text-align:center;' ><span>传统中国文化</span></td></tr></tbody></table></figure><h4 id='1-核心词汇'><strong><span>(1) 核心词汇</span></strong></h4><ul><li><p><span>cultural exchanges                           文化交流</span></p></li><li><p><span>cultural blending/integration       文化融合</span></p></li><li><p><span>traditional Chinese culture            传统中国文化</span></p></li><li><p><span>Confucianism                                    儒家</span></p></li><li><p><span>Buddhism                                           佛家</span></p></li><li><p><span>Daoism/Taoism                                 道家</span></p></li><li><p><span>Peking Opera                                     京剧</span></p></li><li><p><span>Chinese calligraphy                         中国书法</span></p></li><li><p><span>Kung-fu                                              中国功夫</span></p></li><li><p><span>仁    Goodness / Benevolence</span></p></li><li><p><span>义    Righteousness</span></p></li><li><p><span>礼    Politeness / Ritual</span></p></li><li><p><span>智    Wisdom</span></p></li><li><p><span>信    Trust</span></p></li><li><p><span>western cultures                                西方文化</span></p></li><li><p><span>Enlightenment                                   启蒙运动</span></p></li><li><p><span>humanism                                           人本主义</span></p></li><li><p><span>post-modernism                                后现代主义</span></p></li><li><p><span>多元文化                                              </span></p><p><span>multi-cultures, pluralistic / mosaic cultures </span></p></li><li><p><span>保存珍惜                                              preserve and cherish</span></p></li><li><p><span>取其精华去其糟粕                             </span></p><p><span> absorb its essence and resist its dark side</span></p></li><li><p><span>积极促进文化发展                              </span></p><p><span>promote culture development positively</span></p></li><li><p><span>辉煌灿烂的文化遗产                          </span></p><p><span>glorious and splendid cultural heritage / legacy / relics </span></p></li></ul><h3 id='二）流行文化'><span>（二）流行文化</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>年份及卷子</span></th><th style='text-align:center;' ><span>英文题目</span></th><th style='text-align:center;' ><span>中文题目</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>1993</span></td><td style='text-align:center;' ><span>Advertisement on TV</span></td><td style='text-align:center;' ><span>电视广告，封底链接</span></td></tr><tr><td style='text-align:center;' ><strong><span>2006</span></strong></td><td style='text-align:center;' ><strong><span>Idol Worship</span></strong></td><td style='text-align:center;' ><strong><span>偶像崇拜</span></strong></td></tr><tr><td style='text-align:center;' ><span>2009</span></td><td style='text-align:center;' ><span>Web Addiction</span></td><td style='text-align:center;' ><span>上网成瘾</span></td></tr><tr><td style='text-align:center;' ><span>2009MBA</span></td><td style='text-align:center;' ><span>Text Message</span></td><td style='text-align:center;' ><span>手机短信</span></td></tr><tr><td style='text-align:center;' ><span>2010-2</span></td><td style='text-align:center;' ><span>Mobile Phone Subscription</span></td><td style='text-align:center;' ><span>手机入网</span></td></tr><tr><td style='text-align:center;' ><span>2015-1</span></td><td style='text-align:center;' ><span>the Reunion at the Mobile Age</span></td><td style='text-align:center;' ><span>手机时代下的“聚会”</span></td></tr><tr><td style='text-align:center;' ><span>2020-2</span></td><td style='text-align:center;' ><span>Mobile Reading</span></td><td style='text-align:center;' >&nbsp;</td></tr></tbody></table></figure><h4 id='1-写作分析-1'><span>(1) 写作分析</span></h4><blockquote><p><span>优点</span></p></blockquote><ul><li><span>meet the need of work</span></li><li><span>bring conveniences to our life</span></li><li><span>entertain ourselves</span></li></ul><blockquote><p><span>缺点</span></p></blockquote><ul><li><span>waste a great deal of time, money and energy</span></li><li><span>endanger the efficiency of work and study</span></li></ul><h4 id='2-核心词汇-1'><span>(2) 核心词汇</span></h4><ul><li><span>双赢现象                                a win-win deal</span></li><li><span>手机                                        smart / cell phone</span></li><li><span>学习知识                                acquiring knowledge</span></li><li><span>网络 / 暴力 游戏                   online / violent games</span></li><li><span>数码产品                                digital products</span></li><li><span>流行文化                                popular culture</span></li><li><span>电视广告泛滥                        </span><strong><span>pervasive advertisement on TV</span></strong></li><li><span>虚拟生活                                virtual life</span></li><li><span>网上交友                                making friends online</span></li><li><span>偶像崇拜                                idol worship / worship of the idols, idolatry</span></li><li><span>毫无理性地追逐时尚            </span><strong><span>persue fashions unreasonably</span></strong></li><li><span>上网成瘾                                web / Internet addiction</span></li><li><span>网络监管                                </span><strong><span>the Internet supervision</span></strong></li><li><span>网络暴力                                the Internet violence</span></li><li><span>不负责的言论                        </span><strong><span>irresponsible remarks</span></strong></li><li><span>数字时代                                </span><strong><span>digital age</span></strong></li></ul><h3 id='三）教育'><span>（三）教育</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>年份及卷子</span></th><th style='text-align:left;' ><span>英文题目</span></th><th style='text-align:left;' ><span>中文题目</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>2006MBA</span></td><td style='text-align:left;' ><span>Recruitment of Master of Engineering</span><br><img src="D:\360MoveData\Users\Mr.L\Desktop\Fronted-End-WebDeveloper\Notes_MarkDown\myNotes\03.考研英语作文\imgs\研究生招生.png" alt="研究生招生" style="zoom: 33%;" /></td><td style='text-align:left;' ><span>工程硕士招生</span></td></tr><tr><td style='text-align:center;' ><span>2008MBA</span></td><td style='text-align:left;' ><span>College Entrance Test for Adults</span></td><td style='text-align:left;' ><span>成人高考</span></td></tr><tr><td style='text-align:center;' ><span>2013-1</span></td><td style='text-align:left;' ><span>[pic]Choice</span><br><img src="D:\360MoveData\Users\Mr.L\Desktop\Fronted-End-WebDeveloper\Notes_MarkDown\myNotes\03.考研英语作文\imgs\选择.png" alt="选择" style="zoom:33%;" /></td><td style='text-align:left;' ><span>选择</span></td></tr><tr><td style='text-align:center;' ><span>2013-2</span></td><td style='text-align:left;' ><span>students working part-time</span></td><td style='text-align:left;' ><span>大学生兼职</span></td></tr><tr><td style='text-align:center;' ><span>2017-1</span></td><td style='text-align:left;' ><span>[pic] &quot;having books&quot; &amp; &quot;reading books&quot;</span><br><img src="D:\360MoveData\Users\Mr.L\Desktop\Fronted-End-WebDeveloper\Notes_MarkDown\myNotes\03.考研英语作文\imgs\行动.png" alt="行动" style="zoom: 33%;" /></td><td style='text-align:left;' ><span>&quot;有书&quot;与&quot;读书&quot;</span></td></tr><tr><td style='text-align:center;' ><span>2018-1</span></td><td style='text-align:left;' ><span>[pic]chossing curriculum</span><br><img src="D:\360MoveData\Users\Mr.L\Desktop\Fronted-End-WebDeveloper\Notes_MarkDown\myNotes\03.考研英语作文\imgs\选课.png" alt="选课" style="zoom: 50%;" /></td><td style='text-align:left;' ><span>选课进行时</span></td></tr><tr><td style='text-align:center;' ><span>2019-2</span></td><td style='text-align:left;' ><span>graduates&#39; whereabouts</span></td><td style='text-align:left;' ><span>毕业生去向</span></td></tr></tbody></table></figure><h4 id='1-写作分析-2'><span>(1) 写作分析</span></h4><p><span>剖析原因、给出建议</span></p><blockquote><p><span>研究生人数增多的原因</span></p></blockquote><ul><li><span>meet needs / requirements</span></li><li><span>reach demands</span></li><li><span>have difficulty in finding jobs</span></li><li><span>huge working pressure</span></li></ul><h4 id='2-核心词汇-2'><span>(2) 核心词汇</span></h4><ul><li><p><span>考研                                      </span></p><p><span>persuing master&#39;s degree,  going to a graduate school</span></p></li><li><p><span>研究生入学考试                 </span></p><p><span>National Entrance Examination for M.A/M.S Candidates</span></p></li><li><p><span>求职                                      </span></p><p><span>finding jobs, hunting for jobs, job hunting, seeking employment</span></p></li><li><p><span>出国留学                              stydying abroad</span></p></li><li><p><span>创业                                      starting / launching / running one&#39;s own business</span></p></li><li><p><span>做出正确/错误的选择        making right / wrong choices</span></p></li><li><p><span>兼职                                      taking part-time jobs, holding temporary jobs</span></p></li><li><p><span>博览群书                              reading extensively</span></p></li><li><p><span>有选择地阅读                      reading selectively</span></p></li><li><p><span>阅读文学作品/经典作品/偏好  reading literature / classics / preference</span></p></li><li><p><span>强调创新                               emphasizing on innovation</span></p></li><li><p><span>带着新知识 / 困难               with new knowledge  / difficulty</span></p></li><li><p><span>有较少的作业                       with little homework / assignment</span></p></li><li><p><span>勇于面对困难                       </span></p><p><span>facing difficulties / predicaments / adversities bravely</span></p></li></ul><blockquote><p><span>关于学位</span></p></blockquote><ul><li><span>学士学位                               bachelor&#39;s degree</span></li><li><span>硕士学位                               master&#39;s degree</span></li><li><span>博士学位                               doctor&#39;s degree</span></li><li><span>获得学位                               acquire degree</span></li><li><span>文学硕士                               Master of Arts (M.A.)</span></li><li><span>理学硕士                               Master of Science (M.S.)</span></li></ul><blockquote><p><span>关于学校</span></p></blockquote><ul><li><span>小学                                        primary / elementary school</span></li><li><span>中学                                        middle school</span></li><li><span>综合性大学                            university</span></li><li><span>学院                                         institute</span></li><li><span>高等教育                                 higher education</span></li><li><span>大学生                                     college / univversity students</span></li><li><span>大学毕业生                             college / university graduates</span></li><li><span>教授                                          professor</span></li><li><span>系                                              department</span></li><li><span>专业                                          major</span></li><li><span>食堂                                          dinning hall</span></li><li><span>宿舍                                          dormitory</span></li><li><span>选修课                                      elective / optional course</span></li><li><span>必修课                                      compulsory course</span></li><li><span>学杂费                                      tuition fees and other expenses</span></li><li><span>负担学杂费                              cover tuition fees and other expenses</span></li></ul><blockquote><p><span>关于教育</span></p></blockquote><ul><li><p><span>终身教育                                  life-long education</span></p></li><li><p><span>素质教育                                  </span></p><p><strong><span>education for all-round development</span></strong></p></li><li><p><span>义务教育                                  compulsory education</span></p></li><li><p><span>应试教育                                  </span><strong><span>exam-oriented education</span></strong></p></li><li><p><span>理论知识                                  theoretical knowledge</span></p></li><li><p><span>实践技能                                  practical skills</span></p></li><li><p><span>信息时代                                  information age</span></p></li><li><p><span>知识爆炸时代                          era of knowledge explosion </span></p></li><li><p><span>逃课                                           skip classes</span></p></li><li><p><span>学习成绩                                   academic performance</span></p></li><li><p><span>学习氛围                                   academic atmosphere</span></p></li><li><p><span>开阔眼界                                   broaden one&#39;s horizon</span></p></li><li><p><span>激发兴趣                                   stimulate one&#39;s interest</span></p></li><li><p><span>开发潜能                                   tap one&#39;s potential</span></p></li><li><p><span>学生减负                                   reduce study load</span></p></li><li><p><span>放松的大学生活                      relaxing college life</span></p></li></ul><blockquote><p><span>招生就业</span></p></blockquote><ul><li><p><span>招生                                           recruitment</span></p></li><li><p><span>录取                                           enrollment</span></p></li><li><p><span>申请入学                                   apply for admission to / into</span></p></li><li><p><span>高考                                           College Entrance Examination</span></p></li><li><p><span>考研                                           </span></p><p><span>National Entrance Test for M.A. / M.S. Candidates</span></p></li><li><p><span>就业市场                                   job market</span></p></li><li><p><span>雇主 / 雇员                                employer / employee</span></p></li><li><p><span>职业培训                                   </span><strong><span>vocational training</span></strong></p></li></ul><blockquote><p><span>经典例句</span></p></blockquote><ul><li><strong><span>Just as an old saying goes, &quot;Live and Learn.&quot;</span></strong></li></ul><h2 id='二社会热点4'><span>二、社会热点(4)</span></h2><h3 id='一）健康'><span>（一）健康</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>年份及卷子</span></th><th style='text-align:left;' ><span>英文题目</span></th><th style='text-align:center;' ><span>中文题目</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>1996</span></td><td style='text-align:left;' ><span>good health</span></td><td style='text-align:center;' ><span>/</span></td></tr><tr><td style='text-align:center;' ><span>1997</span></td><td style='text-align:left;' ><span>smoking</span></td><td style='text-align:center;' ><span>/</span></td></tr><tr><td style='text-align:center;' ><span>2014-1小</span></td><td style='text-align:left;' ><span>improve students&#39; physical condition</span></td><td style='text-align:center;' ><span>改进学生的身体状况</span></td></tr><tr><td style='text-align:center;' ><span>2014-2小</span></td><td style='text-align:left;' ><span>living habits</span></td><td style='text-align:center;' ><span>/</span></td></tr><tr><td style='text-align:center;' ><span>2021-2</span></td><td style='text-align:left;' ><span>exercising</span></td><td style='text-align:center;' ><span>体育锻炼</span></td></tr></tbody></table></figure><h4 id='核心词汇-1'><span>核心词汇</span></h4><blockquote><p><span>核心词汇</span></p></blockquote><ul><li><p><span>生理健康                       physical health</span></p></li><li><p><span>心理健康                       mental / psychological health / fitness</span></p></li><li><p><span>心态                               state of mind</span></p></li><li><p><span>体育锻炼                       physical exercises  </span></p></li><li><p><span>均衡饮食                       well-balanced diet</span></p></li><li><p><span>减肥 / 节食                    </span><strong><span>go on a diet</span></strong></p></li><li><p><span>提供医疗服务               provide medical services</span></p></li><li><p><span>全面禁烟                       </span><strong><span>total tobacco ban</span></strong></p></li><li><p><span>新型冠状病毒感染的肺炎        </span></p><p><span>novel coronavirus-caused pneumonia(COVID-19)</span></p></li><li><p><span>疫情爆发                        </span><strong><span>the outbreak of epidemic</span></strong></p></li><li><p><span>隔离                                 </span><strong><span>quarantine</span></strong></p></li><li><p><span>口罩                                 mask</span></p></li><li><p><span>遏制疫情蔓延                 contain the outbreak</span></p></li><li><p><span>取消大型集会                 </span><strong><span>cancel mass gatherings</span></strong></p></li><li><p><span>减少外出                         make fewer trips outside</span></p></li><li><p><span>控制人口流动                 </span><strong><span>curb population flow</span></strong></p></li></ul><blockquote><p><span>名人名言</span></p></blockquote><ul><li><strong><span>Health is the first wealth of life.                —— Emerson</span></strong></li><li><span>健康是人生第一财富。             -- 爱默生</span></li></ul><h3 id='二）两代关系'><span>（二）两代关系</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>年份及卷子</span></th><th style='text-align:left;' ><span>英文题目</span></th><th style='text-align:center;' ><span>中文题目</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>1992</span></td><td style='text-align:left;' ><span>generation gap</span></td><td style='text-align:center;' ><span>代沟</span></td></tr><tr><td style='text-align:center;' ><span>2003</span></td><td style='text-align:left;' ><span>parents&#39; doting care</span></td><td style='text-align:center;' ><span>父母溺爱</span></td></tr><tr><td style='text-align:center;' ><span>2005</span></td><td style='text-align:left;' ><span>mistreatment of the elderly</span></td><td style='text-align:center;' ><span>虐待老人</span></td></tr><tr><td style='text-align:center;' ><span>2014-1</span></td><td style='text-align:left;' ><span>[pic] mutual support</span><br><img src="D:\360MoveData\Users\Mr.L\Desktop\Fronted-End-WebDeveloper\Notes_MarkDown\myNotes\03.考研英语作文\imgs\相携.png" alt="相携" style="zoom: 50%;" /></td><td style='text-align:center;' ><span>相携</span></td></tr><tr><td style='text-align:center;' ><span>2015-1</span></td><td style='text-align:left;' ><span>[pic] Instead of merely making request, set an example</span><img src="D:\360MoveData\Users\Mr.L\Desktop\Fronted-End-WebDeveloper\Notes_MarkDown\myNotes\03.考研英语作文\imgs\榜样.png" alt="榜样" style="zoom: 33%;" /></td><td style='text-align:center;' ><span>与其只提要求</span><br><span>不如做个榜样</span></td></tr></tbody></table></figure><h4 id='核心词汇-2'><span>核心词汇</span></h4><blockquote><p><span>核心词汇</span></p></blockquote><ul><li><p><span>代沟                     generation gap</span></p></li><li><p><span>弥合差距             </span><strong><span>bridge the gap</span></strong></p></li><li><p><span>相互理解             mutual understanding</span></p></li><li><p><span>误解                     misunderstanding</span></p></li><li><p><span>照顾                      care, take care of, look after</span></p></li><li><p><span>赡养                      financially support</span></p></li><li><p><span>虐待                      mistreat, maltreat, ill-treat</span></p></li><li><p><span>老龄化社会          aging society</span></p></li><li><p><span>人口老龄化          population aging</span></p></li><li><p><span>老年人                  </span></p><p><span>old / aged people, the old / aged / elderly, senior citizens</span></p></li><li><p><span>奉行孝道               </span><strong><span>practice filial piety</span></strong></p></li></ul><blockquote><p><span>经典例句</span></p></blockquote><ul><li><strong><span>Instead of merely making request, set an example</span></strong><span>.</span></li><li><span>与其只提要求，不如做个榜样。</span></li></ul><h3 id='三）爱心--社会公德'><span>（三）爱心 / 社会公德</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>年份及卷子</span></th><th style='text-align:left;' ><span>英文题目</span></th><th style='text-align:center;' ><span>中文题目</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>1995</span></td><td style='text-align:left;' ><span>The &quot;Project Hope&quot;</span></td><td style='text-align:center;' ><span>希望工程</span></td></tr><tr><td style='text-align:center;' ><span>2001</span></td><td style='text-align:left;' ><span>love</span></td><td style='text-align:center;' ><span>爱心</span></td></tr><tr><td style='text-align:center;' ><span>2006小</span></td><td style='text-align:left;' ><span>contribute to the Project Hope</span></td><td style='text-align:center;' ><span>为希望工程做贡献</span></td></tr><tr><td style='text-align:center;' ><span>2013-2小</span></td><td style='text-align:left;' ><span>charity sale</span></td><td style='text-align:center;' ><span>慈善义卖</span></td></tr><tr><td style='text-align:center;' ><span>2019-1小</span></td><td style='text-align:left;' ><span>aiding rural primary schools</span></td><td style='text-align:center;' ><span>帮助乡村小学</span></td></tr></tbody></table></figure><h4 id='核心词汇-3'><span>核心词汇</span></h4><blockquote><p><span>核心词汇</span></p></blockquote><ul><li><p><span>公德                       public morality</span></p></li><li><p><span>传统美德               traditional virtues</span></p></li><li><p><span>责任                       duty / responsibility</span></p></li><li><p><span>责任感                   sense of responsibility</span></p></li><li><p><span>承担责任               </span></p><p><span>shoulder / assume / undertake one&#39;s duties / responsibilities</span></p></li><li><p><span>逃避责任               </span></p><p><span>avoid / shirk / shun one&#39;s duties/responsibilities</span></p></li><li><p><span>奉献                       devote/dedicate; devotion/dedication</span></p></li><li><p><span>无私奉献               selfless devotion</span></p></li><li><p><span>信任危机               the crisis of trust</span></p></li><li><p><span>公德堕落               the corruption of public morality</span></p></li><li><p><span>道德缺失               the lack of moral sense</span></p></li><li><p><span>不道德行为           immoral behaviors</span></p></li><li><p><span>希望工程               the Project Hope</span></p></li><li><p><span>慈善                        charity</span></p></li><li><p><span>捐款                        donate / donation</span></p></li><li><p><span>贫困的乡村地区    poor rural areas  </span></p></li><li><p><span>入学                         start schooling</span></p></li></ul><blockquote><p><span>经典例句</span></p></blockquote><ul><li><strong><span>Where the flowers of love bloom, life can flourish.              ---- Van Gogh</span></strong></li><li><span>爱之花开放的地方，生命便能欣欣向荣。 -- 梵高</span></li><li><strong><span>Life is a flower, and love is nectar.                                           ---- Hugo</span></strong><span>  </span></li><li><span>人生是花， 那么爱就是花蜜。-- 雨果</span></li></ul><h3 id='四）职业道德'><span>（四）职业道德</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>年份及卷子</span></th><th style='text-align:left;' ><span>英文题目</span></th><th style='text-align:center;' ><span>中文题目</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>1998</span></td><td style='text-align:left;' ><img src="D:\360MoveData\Users\Mr.L\Desktop\Fronted-End-WebDeveloper\Notes_MarkDown\myNotes\03.考研英语作文\imgs\职业道德.png" alt="职业道德" style="zoom:33%;" /></td><td style='text-align:center;' ><span>母鸡下蛋</span></td></tr><tr><td style='text-align:center;' ><span>2012-2小</span></td><td style='text-align:left;' ><span>latter of complaint</span></td><td style='text-align:center;' ><span>投诉信</span></td></tr></tbody></table></figure><h4 id='核心词汇-4'><span>核心词汇</span></h4><blockquote><p><span>核心词汇</span></p></blockquote><ul><li><span>职业道德                              </span><strong><span>professional ethics</span></strong></li><li><span>空洞承诺                              empty promises</span></li><li><span>伪劣产品                              </span><strong><span>fake commodities</span></strong></li><li><span>欺诈行为                              dishonest behaviors</span></li><li><span>诚信                                       honesty</span></li><li><span>学术腐败                               academic corruption</span></li><li><span>剽窃抄袭                               </span><strong><span>plagiarism</span></strong></li><li><span>食品安全                               food safty</span></li><li><span>不公平竞争                           unfair competitions</span></li><li><span>管理部门                                administration departments</span></li><li><span>监管部门                                </span><strong><span>supervision</span></strong><span> departments</span></li><li><span>商家                                        merchant</span></li><li><span>厂家                                        manufacturer</span></li><li><span>漠视法律                                </span><strong><span>disregard</span></strong><span> laws</span></li><li><span>推卸责任                                </span><strong><span>shift the blame onto</span></strong></li><li><span>消费者权益                            consumers&#39; rights and interests</span></li><li><span>公正有效地履行职责            </span><strong><span>perform</span></strong><span> one&#39;s tasks fairly and effectively</span></li><li><span>提供礼貌热情的服务            provide polite and </span><strong><span>hospitable</span></strong><span> services</span></li></ul><blockquote><p><span>谚语</span></p></blockquote><ul><li><strong><span>Honesty is the best policy.</span></strong><span>      诚实是最好的政策</span></li><li><strong><span>It pays to be honest.</span></strong><span>                  诚实是值得的 </span></li></ul><h2 id='三环境保护'><span>三、环境保护</span></h2><figure><table><thead><tr><th style='text-align:center;' ><span>年份及卷子</span></th><th style='text-align:left;' ><span>英文题目</span></th><th style='text-align:center;' ><span>中文题目</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>1991</span></td><td style='text-align:left;' ><span>Where to live ---- in the City or the Country?</span></td><td style='text-align:center;' ><span>住在哪里：城市或乡村</span></td></tr><tr><td style='text-align:center;' ><span>1999</span></td><td style='text-align:left;' ><span>Wildlife Protection</span></td><td style='text-align:center;' ><span>野生动物保护</span></td></tr><tr><td style='text-align:center;' ><span>2000</span></td><td style='text-align:left;' ><span>[pic] A Brief History of World Commercial Fishing</span><br><img src="D:\360MoveData\Users\Mr.L\Desktop\Fronted-End-WebDeveloper\Notes_MarkDown\myNotes\03.考研英语作文\imgs\保护海洋资源.png" alt="保护海洋资源" style="zoom:33%;" /></td><td style='text-align:center;' ><span>保护海洋资源</span></td></tr><tr><td style='text-align:center;' ><span>2005MBA</span></td><td style='text-align:left;' ><span>National Day Golden Week</span></td><td style='text-align:center;' ><span>十一黄金周</span></td></tr><tr><td style='text-align:center;' ><span>2009小</span></td><td style='text-align:left;' ><span>Limiting the use of plastic bags</span></td><td style='text-align:center;' ><span>限制塑料袋的使用</span></td></tr><tr><td style='text-align:center;' ><span>2011-1</span></td><td style='text-align:left;' ><span>[pic] Travel and Environment Protection</span><br><img src="D:\360MoveData\Users\Mr.L\Desktop\Fronted-End-WebDeveloper\Notes_MarkDown\myNotes\03.考研英语作文\imgs\旅程之余.png" alt="旅程之余" style="zoom:33%;" /></td><td style='text-align:center;' ><span>旅程之&quot;余&quot;</span></td></tr></tbody></table></figure><h4 id='核心词汇-5'><span>核心词汇</span></h4><blockquote><p><span>环境保护</span></p></blockquote><ul><li><span>提高环保意识                                 Enhance Environmental awareness</span></li><li><span>环境保护                                         Environment Protection</span></li><li><span>保持生态平衡                                 keep ecological balance</span></li><li><span>生态系统                                         ecosystem</span></li><li><span>自然保护区                                     nature reserve</span></li><li><span>可持续发展战略                             sustainable development strategy           </span></li><li><strong><span>宜</span></strong><span>人的生活环境                             </span><strong><span>pleasant living environment</span></strong></li></ul><blockquote><p><span>节能减排</span></p></blockquote><ul><li><p><span>节能                                                 save energy</span></p></li><li><p><span>减排                                                 </span></p><p><span>reduce the emission of greenhouse gases</span></p></li><li><p><span>降低资源消耗率                             </span></p><p><span>slow down the rate of resource degradation</span></p></li><li><p><span>环保产品                                         environment-friendly products  </span></p></li><li><p><span>清洁可再生能源                             clean and renewable energy</span></p></li><li><p><span>核能                                                  nuclear energy</span></p></li><li><p><span>太阳能                                              solar energy</span></p></li><li><p><span>大功率电器                                      high power electrical appliance</span></p></li><li><p><span>全球变暖                                          global warming</span></p></li><li><p><span>低碳经济                                          low carbin economy</span></p></li><li><p><span>二氧化碳                                          carboon dioxide</span></p></li><li><p><span>气候变化                                          climate change</span></p></li></ul><blockquote><p><span>环境恶化</span></p></blockquote><ul><li><span>环境恶化                                           environment </span><strong><span>deterioration</span></strong></li><li><span>乱砍滥伐                                           </span><strong><span>deforestation</span></strong></li><li><span>水土流失                                           water and soil </span><strong><span>erosion</span></strong></li><li><span>沙漠化                                               </span><strong><span>desertification</span></strong></li><li><span>人口增长                                           population growth</span></li><li><span>人口爆炸                                           population explosion</span></li><li><span>野生动物保护                                   wildlife protection</span></li><li><span>濒危物种                                           endangered species</span></li><li><span>商业捕鱼                                           commercial fishing</span></li><li><span>过度捕捞                                           overfishing</span></li><li><span>过度开发                                           </span><strong><span>reckless exploitation</span></strong></li></ul><blockquote><p><span>自然灾害</span></p></blockquote><ul><li><span>自然灾害                                            natural disaster</span></li><li><span>破坏性灾难性地震                           destructive and </span><strong><span>disasterous</span></strong><span> earthquake</span></li><li><span>水灾                                                    flood</span></li></ul><blockquote><p><span>环境治理</span></p></blockquote><ul><li><p><span>限期治理                                            </span></p><p><strong><span>undertake the treatment within a prescribed limit of time</span></strong></p></li></ul><blockquote><p><span>白色污染</span></p></blockquote><ul><li><p><span>白色污染                                             white pollutiton</span></p></li><li><p><span>限制使用一次性塑料袋                    </span></p><p><span>limit / prohibit / ban the use of </span><strong><span>disposable</span></strong><span> plastic bags</span></p></li><li><p><span>一次性筷子                                          disposable chopsticks</span></p></li></ul><blockquote><p><span>垃圾处理</span></p></blockquote><ul><li><span>垃圾处理(乱扔垃圾)                           </span><strong><span>litter</span></strong></li><li><span>垃圾分类                                               garbage classification</span></li><li><span>丢弃                                                       throw, </span><strong><span>discard</span></strong></li><li><span>垃圾                                                       trash, </span><strong><span>rubbish</span></strong><span>,  </span><strong><span>garbage</span></strong></li></ul><blockquote><p><span>空气污染</span></p></blockquote><ul><li><p><span>空气污染浓度                                        air pollution concentration</span></p></li><li><p><span>汽车尾气排放                                        motor vehicle exhaust</span></p></li><li><p><span>尾气净化器                                             exhaust purifier</span></p></li><li><p><span>无铅汽油                                                 lead-free gasoline</span></p></li><li><p><span>电动汽车                                                 cell-driven vehicles</span></p></li><li><p><span>工业粉尘排放                                         industrial dust discharge</span></p></li><li><p><span>烟尘排放                                                 soot emissions</span></p></li><li><p><span>矿物燃料（煤、石油、天然气）        fossil fuel(coal, oil and natural gas)</span></p></li><li><p><span>雾霾                                                         </span></p><p><span>haze, smog</span></p></li></ul><h2 id='四人生哲理'><span>四、人生哲理</span></h2><figure><table><thead><tr><th style='text-align:center;' ><span>年份</span></th><th style='text-align:center;' ><span>英文题目</span></th><th style='text-align:center;' ><span>中文话题</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>1994</span></td><td style='text-align:center;' ><span>Friendship / companionship</span></td><td style='text-align:center;' ><span>友谊</span></td></tr><tr><td style='text-align:center;' ><span>2003</span></td><td style='text-align:center;' ><span>independence</span></td><td style='text-align:center;' ><span>独立</span></td></tr><tr><td style='text-align:center;' ><span>2004</span></td><td style='text-align:center;' ><span>persistence</span></td><td style='text-align:center;' ><span>坚持</span></td></tr><tr><td style='text-align:center;' ><span>2007</span></td><td style='text-align:center;' ><span>teamwork</span></td><td style='text-align:center;' ><span>合作</span></td></tr><tr><td style='text-align:center;' ><span>2008</span></td><td style='text-align:center;' ><span>optimism</span></td><td style='text-align:center;' ><span>乐观</span></td></tr><tr><td style='text-align:center;' ><span>2012-1</span></td><td style='text-align:center;' ><img src="D:\360MoveData\Users\Mr.L\Desktop\Fronted-End-WebDeveloper\Notes_MarkDown\myNotes\03.考研英语作文\imgs\人生态度.png" alt="人生态度" style="zoom: 50%;" /></td><td style='text-align:center;' ><span>悲观乐观</span></td></tr><tr><td style='text-align:center;' ><span>2013-1</span></td><td style='text-align:center;' ><span>choice</span></td><td style='text-align:center;' ><span>选择</span></td></tr><tr><td style='text-align:center;' ><span>2016-1</span></td><td style='text-align:center;' ><span>Set an Example</span></td><td style='text-align:center;' ><span>榜样</span></td></tr><tr><td style='text-align:center;' ><span>2017-1</span></td><td style='text-align:center;' ><span>Taking Actions</span></td><td style='text-align:center;' ><span>行动</span></td></tr><tr><td style='text-align:center;' ><span>2018-1</span></td><td style='text-align:center;' ><span>Difficulty</span></td><td style='text-align:center;' ><span>困难</span></td></tr></tbody></table></figure><figure><table><thead><tr><th style='text-align:center;' ><span>2019-1</span></th><th style='text-align:center;' ><img src="D:\360MoveData\Users\Mr.L\Desktop\Fronted-End-WebDeveloper\Notes_MarkDown\myNotes\03.考研英语作文\imgs\爬山.png" alt="爬山" style="zoom:50%;" /></th><th style='text-align:center;' ><span>坚持，乐观，自信，鼓励</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>2020-1</span></td><td style='text-align:center;' ><span>Forming a Good Habit</span><br><img src="D:\360MoveData\Users\Mr.L\Desktop\Fronted-End-WebDeveloper\Notes_MarkDown\myNotes\03.考研英语作文\imgs\习惯.png" alt="习惯" style="zoom:50%;" /></td><td style='text-align:center;' ><span>养成良好的习惯</span></td></tr><tr><td style='text-align:center;' ><span>2021-1</span></td><td style='text-align:center;' ><span>Persistance/Confidence/Encouragement</span></td><td style='text-align:center;' ><span>坚持/信心/鼓励</span></td></tr></tbody></table></figure><p>&nbsp;</p><h4 id='核心词汇-6'><span>核心词汇</span></h4><blockquote><p><span>独立 </span></p></blockquote><ul><li><span>独立                         independence</span></li><li><span>自立                         self-independence</span></li><li><span>溺爱                         dote, spoil</span></li><li><span>独生子女                 only child</span></li><li><span>激烈竞争                 fierce competition</span></li><li><span>啃老族                     </span><strong><span>boomerang kids</span></strong></li><li><span>不劳而获                 </span><strong><span>reap without sowing</span></strong></li><li><strong><span>The road must be walked by yourself, so that it can become wider and wider.        —— Madame Curie</span></strong></li><li><span>路要靠自己去走，才能越走越宽。——居里夫人</span></li><li><strong><span>Self-improvement, like honor, is an island without a beach.           —— Napoleon</span></strong></li><li><span>自强像荣誉一样，是一个无滩的岛屿。——拿破仑</span></li></ul><blockquote><p><span>坚持</span></p></blockquote><ul><li><p><span>不断努力                  make constant efforts</span></p></li><li><p><span>坚持                          persistence</span></p></li><li><p><span>绝不放弃                  never give up</span></p></li><li><p><span>绝不停止进步          never stop making progress</span></p></li><li><p><span>取得成功                   achieve success</span></p></li><li><p><span>创新                           </span></p><p><span>innovation / creativeness / innovativeness / invention / creation / creativity</span></p></li><li><p><span>勤奋                           </span><strong><span>diligence</span></strong></p></li><li><p><span>奋斗精神                   striving spirit</span></p></li><li><p><span>拼搏精神                   </span><strong><span>determined spirit</span></strong></p></li><li><p><span>人生观                       outlook on life</span></p></li><li><p><span>世界观                       outlook on the world</span></p></li><li><p><span>恒心                            </span><strong><span>perseverance</span></strong></p></li><li><p><span>困境                            </span><strong><span>predicament</span></strong></p></li><li><p><span>逆境                            </span><strong><span>adversity</span></strong></p></li><li><p><strong><span>As long as the kung fu is deep, the iron pestle can be ground into a needle.</span></strong></p></li><li><p><span>只要功夫深，铁杵磨成针</span></p></li><li><p><strong><span>Where there is a will, there is a way.</span></strong></p></li><li><p><span>有志者事竟成。</span></p></li></ul><blockquote><p><span>信心</span></p></blockquote><ul><li><span>自信                            self-confidence</span></li><li><span>信心                            confidence</span></li><li><span>自信的                        be confident</span></li><li><span>缺乏自信                    lack of confidence</span></li><li><span>高估困难                    </span><strong><span>exaggerate</span></strong><span> / overestimate difficulties</span></li><li><span>低估能力                    </span><strong><span>underestimate</span></strong><span> one&#39;s abilities</span></li><li><span>战胜困难                    </span><strong><span>surmount</span></strong><span> / overcome difficulties</span></li><li><strong><span>Confidence is the master of destiny.             —— Helen Keller</span></strong></li><li><span>信心是命运的主宰。——海伦·凯勒</span></li><li><strong><span>Confidence is the essence of heroes.         —— Emerson</span></strong></li><li><span>自信是英雄的本质。——爱默生</span></li></ul><blockquote><p><span>合作</span></p></blockquote><ul><li><span>团队合作                       teamwork</span></li><li><span>团队精神                       team spirit</span></li><li><span>与他人合作                   cooperate with others</span></li><li><span>齐心协力 / 众志成城   joint / cooperate efforts</span></li><li><span>互相帮助                       help each other</span></li><li><strong><span>A single thread does not make a thread, and a single tree does not make a forest.</span></strong></li><li><span>单丝不成线，独木不成林。</span></li><li><strong><span>With all our strength, the world is invincible.</span></strong></li><li><span>万夫一力，天下无敌。</span></li></ul><blockquote><p><span>乐观</span></p></blockquote><ul><li><span>保持乐观                        keep optimistic</span></li><li><span>悲观                                pessimism</span></li><li><span>悲观的                            be pessimistic</span></li><li><span>积极态度                        positive attitude</span></li><li><span>保持良好心态                keep a good mood</span></li><li><strong><span>There is still a bright sunny day behind the dark clouds.</span></strong></li><li><span>乌云后面依然是灿烂的晴天。</span></li><li><strong><span>Understand life and love it。               —— Roman Roland</span></strong></li><li><span>理解生活而且还要热爱生活。                    ——罗曼 · 罗兰</span></li></ul><h1 id='大作文写作框架'><span>【大作文写作框架】</span></h1><p><span>3段，12句左右，160-250词，5-7个关联词，5-7个从句</span></p><h2 id='一第一段-introduction'><span>一、第一段 Introduction</span></h2><blockquote><p><span>第一段，引言/起始/淘尽段，图画描述段，3句左右</span></p></blockquote><ul><li><span>General Description 总体描述：1句，人物/动物/事物 + 动作 + 环境， 或人物 + 服装 + 表情</span></li><li><span>Details 细节描述，挖掘细节词、串词成句，1-2句</span></li><li><span>Caption 文字说明， 1句</span></li></ul><h2 id='二第二段-body'><span>二、第二段 Body</span></h2><blockquote><p><span>第二段，主体 / 拓展段，意义阐释段， 5句左右</span></p></blockquote><ul><li><span>Topic Sentence 主题句 ： 图画象征寓意，文章中心思想，1句</span></li></ul><p><span>接下来进行主体的论证，有几种论证手段</span></p><ul><li><span>Exemplification 论证， 3句左右</span></li><li><span>Compare and Contrast 比较和对比</span></li><li><span>Summary 小结，概括论证、总结本段，1句（可以不写）</span></li></ul><h2 id='三第三段-conclusion'><span>三、第三段 Conclusion</span></h2><blockquote><p><span>第三段，归纳结论或建议措施段，4句</span></p></blockquote><ul><li><span>Concluding sentence：结论句，1句</span></li><li><span>Suggestions：两点建议或两句评论，2句</span></li><li><span>Looking ahead 包装结尾、展望未来：1句，三大优秀句型</span></li></ul><h1 id='句型'><span>【句型】</span></h1><h2 id='一第一段总分总）'><span>一、第一段（总分总）</span></h2><blockquote><p><span>第一句</span></p></blockquote><ul><li><p><span>As is </span><strong><span>symbolically / vividly / subtly</span></strong><span> </span><strong><span>illustrated / shown / described / depicted / reflected / demonstrated / portrayed</span></strong><span> in the </span><strong><span>portrayal / cartoon / drawing / caricature / picture</span></strong><span>, there is a boiling hot pot containing various ingredients of multi-cultures.</span></p><p><span>如漫画象征性 / 生动地 / 微妙地 所示，一个沸腾的火锅中拥有诸多多元文化元素。</span></p></li><li><p><span>It is subtly revealed in the cartoon that two young people are on their painstaking journey up a mountain.</span></p><p><span>图中巧妙揭示了两个年轻人正在登山途中付出艰苦的努力。</span></p></li><li><p><span>In the portrayals above are two young people behaving completely different in the face of difficulties.</span></p><p><span>上述漫画中有两位年轻人在困难面前的做法完全不同</span></p></li></ul><blockquote><p><span>第二句</span></p></blockquote><ul><li><p><span>But different from the traditional Chinese hot pot, in which you see beef or lamb, luncheon meat, mushrooms, and a variety of vegetables, in this hot pot there are various &quot;cultural foodstuffs&quot; of both Chinese and foreign origins: Confucious, Aristotle, and Shakespeare, Taosim, Greek Mythology and so on;</span></p><p><span>但是可以看到与放有牛羊肉、午餐肉、蘑菇和各色蔬菜的传统中式火锅不同，在这个火锅里是各种源自中外的“文化食材”：孔子、亚里士多德、莎士比亚、道教、希腊神话等等。</span></p></li><li><p><span>In the left cartoon, a lovely young lady is sitting at a desk with a great many books on it and working hardly, saying, &quot;I will be content only if I can accomplish my task as soon as possilble.&quot; In contrast, in the right drawing, a young man is laying lazily on a sofa and doing nothing, saying, &quot;I will not start my work until the last moment.&quot;</span></p><p><span>在左边的漫画中，一位可爱的年轻女子正坐在一张放了很多书的书桌旁努力学习，并说：“尽早完成才放心。”相反，在右边的漫画中，一位年轻男子懒散地倚靠在沙发上无所事事，并说：“不到最后不动手。”</span></p></li><li><p><span>Dressed in Monkey King costume, the lovely boy is </span><strong><span>murmuring</span></strong><span> sadly, &quot;Dad, many of my classmates don&#39;t think that learning Peking opera is appealing.&quot; Smiling at his son, the father answers, &quot;Don&#39;t you enjoy it yourself? That is enough.&quot;</span></p><p><span>这个可爱的小男孩穿着美猴王的戏服，难过地小声说：“爸爸，好多同学觉得唱戏不好玩。”这位父亲笑着回答儿子：“你自己不是喜欢吗？那就足够了。”</span></p></li></ul><blockquote><p><span>第三句</span></p></blockquote><ul><li><p><strong><span>We are infoemed that</span></strong><span> the cultural &quot;hot pot&quot; is both delicious and nutritious.</span></p><p><span>文字说明显示：文化“火锅”，既美味又营养。</span></p></li><li><p><strong><span>The caption informs us</span></strong><span> that the picture shows a typical gathering in an era of mobile phones.</span></p><p><span>下面的标题提示我们，图画描述的场景是“手机时代的聚会”。</span></p></li><li><p><strong><span>And below the pitures</span></strong><span>, there is a caption which says: &quot;Habit&quot;.</span></p><p><span>在漫画下方，文字说明显示：“习惯”。</span></p></li></ul><h2 id='二第二段总分总--总分）'><span>二、第二段（总分总 / 总分）</span></h2><blockquote><p><span>主题句</span></p></blockquote><ul><li><p><strong><span>From the portrayal</span></strong><span>, we can </span><strong><span>conclude  / draw the conclusion</span></strong><span> that the painter wants to convey such a message: a good many scenic spots are flooded with visitors, who spoil the beauty of nature by creating and leaving behind God-Knows-how-much trash.</span></p><p><span>从漫画中，我们可以得出结论，画家想要表达这样一种信息：成群的游客涌入众多景点，制造并留下了大量的垃圾，破化了自然之美。</span></p></li><li><p><span>The aim of the picture is to illustrate that practicing filial piety is </span><strong><span>of great importance / of utmost significance</span></strong><span> in our current society.</span></p><p><span>这副漫画旨在告诉我们奉行孝道在我们当代社会中非常重要。</span></p></li><li><p><span>The intention of the cartoon is to show us that </span><strong><span>due attention / great emphasis / utmost significance / great importance </span></strong><span> should be </span><strong><span>attached / paid</span></strong><span> to our interest.</span></p><p><span>这幅漫画是想告诉我们：我们应该充分重视自己的兴趣。</span></p></li></ul><blockquote><p><span>举例论证</span></p></blockquote><ul><li><p><strong><span>For one thing</span></strong><span>, the struggle with difficulties will lead you out of the </span><strong><span>impasse</span></strong><span> to a brilliant future. </span><strong><span>For instance</span></strong><span>, in 1993, J. K. Rowling, unemployed and with clinical depression, had even planned to commit suicide in despair. Fortunately, she did not give up, and </span><strong><span>it was</span></strong><span> under such circumstances </span><strong><span>that</span></strong><span> she began to create what later became the best-selling &quot;Harry Potter&quot; series. </span><strong><span>For another</span></strong><span>, difficulties alse teach people to cherish their life. </span><strong><span>But for the harships</span></strong><span> in her life, Helen Keller </span><strong><span>wouldn&#39;t have</span></strong><span> written the famous article &quot; Three Days to See &quot;.</span></p><p><span>首先，与困难搏斗将带你走出困境，走向光明的未来。例如，1993年J.K罗琳处于失业状态并且患有抑郁症，在绝望中她企图自杀。幸运的是，她没有放弃希望，而且正是在这种状态下她开始创作后来成为畅销书的《哈利波特》系列。此外，困难教会人们珍惜生活。如果没有生命中的磨难，海伦凯勒就不可能写出著名的文章《假如给我三天光明》。</span></p></li></ul><blockquote><p><span>比较和对比论证</span></p></blockquote><ul><li><p><strong><span>On account of / Because of / Due to</span></strong><span> the quickening pace of life, competition is becoming increasingly fierce in all walks of life, imposing tremendous pressure on all individuals. The past few years have witnessed </span><strong><span>dramatic / marked / sharp ( slight / gradual / steady )</span></strong><span> increase / rise ( decrease / decline ) in the difficulty of examinations and employment. We must </span><strong><span>maintain</span></strong><span> persistence and perseverance in the face of challenges </span><strong><span>so as to / in order to / in a bid to / for purpose of / aiming to / aiming at</span></strong><span> survive and succeed. Suppose we are inclined to overestimate our rivals or problems and neglect our ability, we will become hesitant and doubtful of ourselves, unable to fulfill even a simple task.</span></p><p><span>由于生活节奏加快，各行各业的竞争变得日益激烈，给所有人都造成了巨大的压力。过去几年中，考试和就业的难度都在急剧增加。面对挑战，我们必须坚持不懈才能生存和成功。假如我们习惯于高估我们的竞争对手或者问题，忽视我们自己的能力，我们就会变得犹豫不决、怀疑自己，甚至连一件简单的工作也完成不了。</span></p></li></ul><blockquote><p><span>小结句子</span></p></blockquote><ul><li><span>This case effectively clarifies that it is imperative for us to persist.</span></li></ul><h2 id='三第三段'><span>三、第三段</span></h2><blockquote><p><span>第一句结论句</span></p></blockquote><ul><li><strong><span>From the preceding discussion</span></strong><span>, it is readily apparent that the mobile phone, as an increasingly popular tool of communication, has both its upsides and downsides.</span>
+<span>在上述讨论中可以得出一个显而易见的结论：手机作为人们之间愈加流行的交流方式，既有优点也存在不足。</span></li><li><strong><span>In summary</span></strong><span>, difficulty is an unavoidable part of everyone’s life, and the </span><strong><span>triumph</span></strong><span> </span><strong><span>over it</span></strong><span> will make you an unbeatable person.</span>
+<span>总之，困难是人生中不可避免的一部分，而不断战胜困难，你就将成为生活的强者。</span></li><li><strong><span>Generally speaking</span></strong><span>, forming good habits is essential to us in several ways, including helping us to </span><strong><span>excel in</span></strong><span> our studies, lead an active social life, and maintain optimal mental health.</span>
+<span>总之，养成良好的习惯在几个方面对我们来说都是必要的，包括帮助我们在学习中胜出，拥有积极的社交生活并且保持最佳的心理健康状态。</span></li></ul><blockquote><p><span>第2-3句建议或评论句</span></p></blockquote><ul><li><strong><span>On the one hand</span></strong><span>, we can use them to </span><strong><span>aid the youth</span></strong><span> to be more independent in life. </span><strong><span>On the other hand</span></strong><span>, parents should be </span><strong><span>sensible enough</span></strong><span> to give their children more freedom to deal with troubles and problems.</span>
+<span>一方面，我们可以用它们来帮助年轻人在生活中更加独立。另一方面，父母们应该充满理智，给孩子们更多自由来解决困难和问题。</span></li><li><strong><span>It is my view that</span></strong><span>, </span><strong><span>first and foremost</span></strong><span>, we can use the drawing to </span><strong><span>aid juveniles</span></strong><span> in learning to cooperate successfully with each other. </span><strong><span>Furthermore</span></strong><span>, whatever difficulties or situations we are confronted with, we can remind ourselves that those </span><strong><span>who have the spirit of cooperation and team work are nearer to success</span></strong><span>.</span>
+<span>首先，我认为我们可以用这幅漫画来帮助年轻人学会成功地相互合作。其次，无论我们面临何种困难或境地，我们可以提醒自己：那些拥有合作与团队精神的人更容易成功。</span></li><li><strong><span>Admittedly</span></strong><span>, the mobile phone </span><strong><span>can be used in many productive and useful ways</span></strong><span>. However, people who lack self-control, such as adolescents, must limit the time they spend on digital products, or their academic work and social lives will eventually pay the price.</span>
+<span>诚然，通过使用手机人们能做很多有益的事情，但那些缺乏自制力的人，比如未成年人，必须要控制使用数码产品的时间，否则他们的学业和社会交往就会受到影响，并最终为此付出代价。</span></li></ul><blockquote><p><span>第4句 展望未来句 </span></p><p><span>倒装、强调、虚拟语气、名人名言</span></p></blockquote><ul><li><strong><span>Only by</span></strong><span> making constant efforts and never stop making progress </span><strong><span>can we</span></strong><span> show grace under pressure and turn our dreams into reality.</span>
+<span>只有通过不断努力，并且永远不要停止进步，我们才能在压力之下毫无惧色，并且把梦想变成现实。</span></li><li><strong><span>In conclusion</span></strong><span>, it is persistent work </span><strong><span>that is conducive to</span></strong><span> your grasping a </span><strong><span>considerable</span></strong><span> vocabulary.</span>
+<span>总而言之，只有长期学习才有助于你掌握大的词汇量。</span></li><li><strong><span>It is high time that</span></strong><span> we enhanced people&#39;s awareness to </span><strong><span>rectify</span></strong><span> this by </span><strong><span>taking the environmental protection into consideration</span></strong><span>.</span>
+<span>是时候加强人们的意识，通过多加考虑环境保护因素来</span><strong><span>改变</span></strong><span>这一现状了</span></li><li><strong><span>Just as</span></strong><span> the famous German philosopher Friedrich Nietzsche wrote in hisTwilight of the Idols: “</span><strong><span>What does not destroy me makes me stronger.</span></strong><span>”</span>
+<span>正如德国著名哲学家弗里德里希·尼采曾在《偶像的黄昏》中写道：“凡不能毁灭我的，将使我更强大。”</span></li></ul><h1 id='短语词汇'><span>【短语+词汇】</span></h1><ul><li><p><span>认为                                     hold / reckon / argue / maintain</span></p></li><li><p><span>保持                                     maintain / keep / </span></p></li><li><p><span>为了                                    </span></p><p><span> in order to / in a bid to / aiming to / aiming at / for purpose of</span></p></li><li><p><span>获得成功                            </span></p><p><span> achieve / obtain / find / reach success    /      become successful</span></p></li><li><p><span>完成任务                             fulfill / accomplish task</span></p></li></ul><hr /><ul><li><p><span>充分考虑到上述论证         </span></p><p><strong><span>With due</span></strong><span> consideration of the arguments above</span></p><p><span>Take the above arguments into account / consideration</span></p></li><li><p><span>不可否认                              </span></p><p><strong><span>There is no denying that</span></strong><span> / There is little doubt that / It goes without saying that </span></p></li><li><p><span>人际沟通                              interpersonal communication</span></p></li><li><p><span>优点                                      advantages / strenghts / merits / benefits</span></p></li><li><p><span>缺点                                      disadvantages / shortcomings / weakensses / drawbacks</span></p></li><li><p><span>之前的                                  preceding / former</span></p></li><li><p><span>总之                                      </span></p><p><span>In general / In brief / Briefly speaking / In short / Generally speaking </span></p></li><li><p><span>重要的                                  vital / crucial / significant / important</span></p></li></ul><hr /><ul><li><p><span>年轻人                                  </span></p><p><span>the adolescents / </span><strong><span>juvenile</span></strong><span> / young,     youngsters, teenagers, young people</span></p></li><li><p><span> 牢记                                     bear in mind</span></p></li><li><p><span>我认为                                  I cling to the idea that...    /    I hold the opinion that...</span></p></li><li><p><span>更容易获得成功                  be inclined to achieve success</span></p></li><li><p><span>在逆境面前坚持不懈          persist in the face of adversities</span></p></li><li><p><span>形成好的习惯                      form good habits</span></p></li><li><p><span>倒装句                                  </span></p><p><span>Hardly / </span><strong><span>Scarcely</span></strong><span> can you obtain success unless you work hard.</span></p></li></ul><h1 id='总结'><span>【总结】</span></h1><p><strong><span>天下文章一大抄，就看会抄不会抄！</span></strong></p><p><span>关注一下四大句型：</span><strong><span>描述句型</span></strong><span>、举例句型、评论句型、原因句型</span></p><p><strong><span>几个技巧</span></strong><span>（变化是关键）</span></p><p><strong><span>（1）大量使用不同主语</span></strong></p><p><span>作主语：名词、人称代词、物称代词、动名词、不定式、从句</span></p><p><strong><span>（2）大量使用被动语态</span></strong></p><p><strong><span>（3）大量使用不同时态</span></strong></p><p><span>一般现在、现在进行、现在完成、一般过去、一般将来</span></p><p><strong><span>（4）大量使用主系表结构</span></strong></p><p><strong><span>（5）大量使用定语状语</span></strong></p><p><span>形容词副词、介词短语、分词短语、现在分词、词组、定语状语从句</span></p><p><strong><span>（6）大量使用精彩词组</span></strong></p><p><strong><span>（7）大量使用精彩句型</span></strong></p><p><strong><span>（8）大量使用精彩从句</span></strong></p></div></div>
+</body>
+</html>
